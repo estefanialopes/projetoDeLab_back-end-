@@ -26,9 +26,7 @@ usuarioRouter.post(
       nome: Joi.string().required(),
       email: Joi.string().email().required().messages({ 'string.email': 'Formato de email inválido.' }),
       senha: Joi.string().required(),
-      genero: Joi.string().required(),
       endereco: Joi.string().required(),
-      telefone: Joi.string().required(),
       dataNascimento: Joi.date().optional()
     }
   }),

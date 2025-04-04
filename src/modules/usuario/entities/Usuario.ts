@@ -10,15 +10,12 @@ export class Usuario implements UsuarioModel {
   @Column({ name: 'nome' })
   nome!: string
 
+  @Column({ name: 'token' })
+  token!: string
+
   @Column({ name: 'endereco' })
   endereco!: string
   
-  @Column({ name: 'genero' })
-  genero!: string
-  
-  @Column({ name: 'telefone' })
-  telefone!: string
-
   @Column({ name: 'email' })
   email!: string
 

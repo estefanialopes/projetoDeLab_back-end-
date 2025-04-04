@@ -10,12 +10,12 @@ export class CreateSessionService {
     const { email, senha } = dados
     const usuario = await UsuarioRepository.findByEmail(email)
     if (!usuario) {
-      throw new ErrorHandler(401, 'Login falhou: Usuário não encontrado/Credenciais inválidas.')
+      throw new ErrorHandler(401, 'Login falhou: Credenciais inválidas.')
     }
 
     const senhaValida = await compare(senha, usuario.senha)
     if (!senhaValida) {
-      throw new ErrorHandler(401, 'Login falhou: Usuário não encontrado/Credenciais inválidas.')
+      throw new ErrorHandler(401, 'Login falhou: Credenciais inválidas.')
     }
 
     const payload = {

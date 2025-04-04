@@ -6,5 +6,4 @@ export interface CreateSession {
 }
 
 export interface CreatedSession extends Omit<UsuarioModel, 'senha'> {
-  token: string;
 }

@@ -6,7 +6,7 @@ import ErrorHandler from '@shared/utils/errors/errorHandler'
 export function isAuthenticated(request: Request, response: Response, next: NextFunction): void {
   const auth = request.headers?.authorization
   if (!auth) {
-    throw new ErrorHandler(401, 'Token não encontrado.')
+    throw new ErrorHandler(401, 'Não Autorizado.')
   }
   const [, token] = auth.split(' ')
 
@@ -14,6 +14,6 @@ export function isAuthenticated(request: Request, response: Response, next: Next
     verify(token, JWT_SECRET_KEY)
     next()
   } catch (erro) {
-    throw new ErrorHandler(401, 'Token inválido.')
+    throw new ErrorHandler(401, 'Não Autorizado.')
   }
 }

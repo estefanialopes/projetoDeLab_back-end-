@@ -13,15 +13,13 @@ import {
 export class UsuarioController {
   async createUsuario(request: Request, response: Response): Promise<any> {
     const createUsuarioService = new CreateUsuarioService()
-    const { nome, genero, endereco, telefone, dataNascimento, email, senha } = request.body
+    const { nome, endereco, dataNascimento, email, senha } = request.body
     console.log(endereco)
     const resp =  await createUsuarioService.execute({
       nome,
-      genero,
       email,
       senha,
       endereco,
-      telefone,
       dataNascimento
     } as AddUsuario)
     const { senha: senhaUsuario, ...rest} = resp
@@ -31,7 +29,7 @@ export class UsuarioController {
   async updateUsuario(request: Request, response: Response) {
     const { id } = request.params
     const updateUsuarioService = new UpdateUsuarioService()
-    await updateUsuarioService.execute(Number(id), request.body as UpdateUsuario)
+    await updateUsuarioService.execute(id, request.body as UpdateUsuario)
     response.json({ body: 'No Content'})
   }
 
@@ -47,10 +45,8 @@ export class UsuarioController {
     const {
       id,
       nome,
-      genero,
       email,
       senha,
-      telefone,
       endereco,
       dataNascimento,
       sortColumn,
@@ -61,11 +57,9 @@ export class UsuarioController {
     const resp = await getUsuariosService.execute({
       id,
       nome,
-      genero,
       email,
       senha,
       endereco,
-      telefone,
       dataNascimento,
       sortColumn,
       sortDirection,

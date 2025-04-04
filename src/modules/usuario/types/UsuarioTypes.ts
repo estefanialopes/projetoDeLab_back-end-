@@ -4,8 +4,7 @@ export interface UsuarioModel {
   endereco: string;
   email: string;
   senha: string;
-  telefone: string;
-  genero: string;
+  token: string;
   dataNascimento: string;
 }
 
@@ -20,9 +19,7 @@ export interface GetUsuario {
 export interface GetUsuarios {
   id?: string;
   nome?: string;
-  genero?: string;
   email?: string;
-  telefone: string;
   dataNascimento?: string;
   sortColumn?: string;
   sortDirection?: string;
