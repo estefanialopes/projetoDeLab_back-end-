@@ -30,4 +30,4 @@ export interface DeleteUsuario {
   id: number;
 }
 
-export type tipoPermissao = 'adm' | 'teacher' | 'student'
+export type tipoPermissao = 'adm' | 'student'
