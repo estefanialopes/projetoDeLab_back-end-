@@ -4,16 +4,16 @@ import { JWT_SECRET_KEY } from '@modules/usuario/jwt/auth'
 import ErrorHandler from '@shared/utils/errors/errorHandler'
 
 export function isAuthenticated(request: Request, response: Response, next: NextFunction): void {
-  const auth = request.headers?.authorization
-  if (!auth) {
+  const token = request.headers?.authorization
+  if (!token) {
     throw new ErrorHandler(401, 'Não Autorizado.')
   }
-  const [, token] = auth.split(' ')
 
   try {
     verify(token, JWT_SECRET_KEY)
     next()
   } catch (erro) {
+    console.log(erro)
     throw new ErrorHandler(401, 'Não Autorizado.')
   }
 }

@@ -14,7 +14,7 @@ export class UsuarioController {
   async createUsuario(request: Request, response: Response): Promise<any> {
     const createUsuarioService = new CreateUsuarioService()
     const { nome, endereco, dataNascimento, email, senha } = request.body
-    console.log(endereco)
+
     const resp =  await createUsuarioService.execute({
       nome,
       email,

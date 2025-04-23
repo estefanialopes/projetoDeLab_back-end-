@@ -1,6 +1,6 @@
 export interface LivroModel {
     id: string;
-    isnb: string;
+    isbn: string;
     titulo: string;
     autor: string;
     anoPublicacao: string;

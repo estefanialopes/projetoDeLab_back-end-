@@ -1,4 +1,4 @@
-import { CreateLivro, LivroModel } from "../types";
+import { CreateLivro, LivroModel } from "@modules/livro/types";
 import { LivroRepository } from "@modules/livro/repositories";
 
 export class CreateLivroService {

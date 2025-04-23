@@ -6,7 +6,7 @@ import { WhereConditions } from "@modules/utils";
 
 const selectFields = [
   "id",
-  "isnb",
+  "isbn",
   "titulo",
   "autor",
   "anoPublicacao",

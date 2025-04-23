@@ -1,1 +1,5 @@
 export * from './CreateLivroService'
+export * from './UpdateLivroService'
+export * from './DeleteLivroService'
+export * from './GetLivroService'
+export * from './GetLivrosService'
