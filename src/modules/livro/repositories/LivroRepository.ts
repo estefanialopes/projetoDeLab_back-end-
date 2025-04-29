@@ -6,11 +6,12 @@ import { WhereConditions } from "@modules/utils";
 
 const selectFields = [
   "id",
-  "isbn",
   "titulo",
   "autor",
   "anoPublicacao",
   "edicao",
+  "idGenero",
+  "idEditora"
 ];
 
 export const LivroRepository = AppDataSource.getRepository(Livro).extend({

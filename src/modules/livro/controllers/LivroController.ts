@@ -31,7 +31,7 @@ export class LivroController {
     async deleteLivro(request: Request, response: Response) {
       const { id } = request.params
       const deleteLivroService = new DeleteLivroService()
-      await deleteLivroService.execute(Number(id))
+      await deleteLivroService.execute(id)
       response.json({body: 'Livro excluído com sucesso!'})
     }
 }

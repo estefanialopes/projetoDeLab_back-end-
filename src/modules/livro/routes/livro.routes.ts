@@ -25,7 +25,6 @@ livroRouter.post(
   celebrate({
     [Segments.BODY]: {
       titulo: Joi.string().required(),
-      isbn: Joi.string().required(),
       autor: Joi.string().required(),
       edicao: Joi.string().required(),
       anoPublicacao: Joi.string().required(),
@@ -41,11 +40,10 @@ livroRouter.put(
   isAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
-      id: Joi.number().required()
+      id: Joi.string().required()
     },
     [Segments.BODY]: {
       titulo: Joi.string().optional(),
-      isbn: Joi.string().optional(),
       autor: Joi.string().optional(),
       edicao: Joi.string().optional(),
       anoPublicacao: Joi.string().optional(),
@@ -61,7 +59,7 @@ livroRouter.delete(
   isAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
-      id: Joi.number().required()
+      id: Joi.string().required()
     }
   }),
   livroController.deleteLivro

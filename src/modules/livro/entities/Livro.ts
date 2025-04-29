@@ -19,9 +19,6 @@ export class Livro implements LivroModel {
   @Column({ name: "titulo" })
   titulo!: string;
 
-  @Column({ name: "isbn" })
-  isbn!: string;
-
   @Column({ name: "autor" })
   autor!: string;
 
