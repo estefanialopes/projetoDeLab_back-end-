@@ -3,12 +3,14 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { LivroModel } from "@modules/livro/types";
-import { Editora } from "./Editora";
+import { Editora } from "../../editora/entities/Editora";
 import { Genero } from "./Genero";
+import { Exemplar } from "@modules/exemplar/entities/Exemplar";
 
 @Entity({ name: "livro" })
 export class Livro implements LivroModel {
@@ -41,4 +43,7 @@ export class Livro implements LivroModel {
   @ManyToOne((type) => Genero, (genero) => genero.livros)
   @JoinColumn({ name: 'id_genero' })
   genero!: Genero;
+
+  @OneToMany((type) => Exemplar, (exemplar) => exemplar.idLivro)
+  exemplares!: Exemplar[];
 }

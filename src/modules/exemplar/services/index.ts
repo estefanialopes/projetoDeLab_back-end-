@@ -1,0 +1,6 @@
+export * from './CreateExemplarService'
+export * from './UpdateExemplarService'
+export * from './DeleteExemplarService'
+export * from './GetExemplarService'
+export * from './GetExemplaresService'
+export * from './GetExemplaresAvailable'

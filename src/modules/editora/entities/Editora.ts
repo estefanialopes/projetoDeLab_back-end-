@@ -1,13 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Livro } from "./Livro";
-
-export interface EditoraModel {
-  id: string;
-  nome: string;
-  endereco: string;
-  telefone: string;
-  email: string;
-}
+import { Livro } from "../../livro/entities/Livro";
+import { EditoraModel } from "../types";
 
 @Entity({ name: "Editora" })
 export class Editora implements EditoraModel {

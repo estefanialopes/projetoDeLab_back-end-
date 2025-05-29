@@ -1,0 +1,5 @@
+export * from './CreateEditoraService'
+export * from './UpdateEditoraService'
+export * from './DeleteEditoraService'
+export * from './GetEditoraService'
+export * from './GetEditorasService'
