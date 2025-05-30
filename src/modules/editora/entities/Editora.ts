@@ -2,7 +2,7 @@ import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from
 import { Livro } from "../../livro/entities/Livro";
 import { EditoraModel } from "../types";
 
-@Entity({ name: "Editora" })
+@Entity({ name: "editora" })
 export class Editora implements EditoraModel {
   @PrimaryColumn()
   @PrimaryGeneratedColumn("uuid")

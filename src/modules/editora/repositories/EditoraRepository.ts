@@ -25,7 +25,7 @@ export const EditoraRepository = AppDataSource.getRepository(Editora).extend({
       const whereConditions = new WhereConditions<GetEditoras>()
       const where = whereConditions.createWhereConditions(rest)
   
-      return await this.find({
+      return await this.findAndCount({
         select: selectFields as FindOptionsSelect<Editora>,
         take: limit ?? 10,
         order: {

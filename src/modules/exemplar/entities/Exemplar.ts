@@ -10,7 +10,7 @@ import {
 import { ExemplarModel } from "../types";
 import { Livro } from "@modules/livro/entities";
 
-@Entity({ name: "Exemplar" })
+@Entity({ name: "exemplar" })
 export class Exemplar implements ExemplarModel {
   @PrimaryColumn()
   @PrimaryGeneratedColumn("uuid")

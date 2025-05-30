@@ -13,7 +13,7 @@ exemplarRouter.get(
   isAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
-      id: Joi.number().required()
+      id: Joi.string().required()
     }
   }),
   exemplarController.getExemplar
@@ -37,7 +37,7 @@ exemplarRouter.post(
     [Segments.BODY]: {
       idLivro: Joi.string().required(),
       tomboPatrimonial: Joi.string().required(),
-      reservado: Joi.string().required(),
+      reservado: Joi.number().required(),
     }
   }),
   exemplarController.createExemplar
@@ -53,7 +53,7 @@ exemplarRouter.put(
     [Segments.BODY]: {
       idLivro: Joi.string().optional(),
       tomboPatrimonial: Joi.string().optional(),
-      reservado: Joi.string().optional(),
+      reservado: Joi.number().optional(),
     }
   }),
   exemplarController.updateExemplar

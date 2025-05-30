@@ -6,6 +6,7 @@ export interface UsuarioModel {
   senha: string;
   token: string;
   dataNascimento: string;
+  permissao: tipoPermissao;
 }
 
 export type AddUsuario = Omit<UsuarioModel, 'id'>

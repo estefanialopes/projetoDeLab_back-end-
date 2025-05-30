@@ -3,6 +3,7 @@ import { Livro } from "@modules/livro/entities";
 import { FindOptionsSelect } from "typeorm";
 import { GetLivros } from "@modules/livro/types"
 import { WhereConditions } from "@modules/utils";
+import { Exemplar } from "@modules/exemplar/entities";
 
 const selectFields = [
   "id",
@@ -30,6 +31,7 @@ export const LivroRepository = AppDataSource.getRepository(Livro).extend({
       return await this.find({
         select: selectFields as FindOptionsSelect<Livro>,
         take: limit ?? 10,
+        relations: ['exemplares'],
         order: {
           [sortColumn ?? 'id'] : sortDirection ?? 'ASC'
         },

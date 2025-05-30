@@ -12,7 +12,7 @@ export interface GeneroModel {
   nome: string;
 }
 
-@Entity({ name: "Genero" })
+@Entity({ name: "genero" })
 export class Genero implements GeneroModel {
   @PrimaryColumn()
   @PrimaryGeneratedColumn("uuid")

@@ -13,7 +13,7 @@ livroRouter.get(
   isAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
-      id: Joi.number().required()
+      id: Joi.string().required()
     }
   }),
   livroController.getLivro

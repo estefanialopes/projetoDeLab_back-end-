@@ -44,6 +44,6 @@ export class Livro implements LivroModel {
   @JoinColumn({ name: 'id_genero' })
   genero!: Genero;
 
-  @OneToMany((type) => Exemplar, (exemplar) => exemplar.idLivro)
+  @OneToMany((type) => Exemplar, (exemplar) => exemplar.livro)
   exemplares!: Exemplar[];
 }

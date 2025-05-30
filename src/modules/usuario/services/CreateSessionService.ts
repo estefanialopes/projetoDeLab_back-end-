@@ -21,7 +21,8 @@ export class CreateSessionService {
     const payload = {
       id: usuario.id,
       nome: usuario.nome,
-      email: usuario.email
+      email: usuario.email,
+      permissao: usuario.permissao
     }
     const token = sign(payload, JWT_SECRET_KEY, { subject: `${usuario.id}`, expiresIn: '1d' })
     const { senha: senhaRetorno, ...rest } = usuario

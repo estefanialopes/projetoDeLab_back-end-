@@ -13,7 +13,7 @@ import { Livro } from "@modules/livro/entities";
 import { Exemplar } from "@modules/exemplar/entities";
 import { Usuario } from "@modules/usuario/entities";
 
-@Entity({ name: "Emprestimo" })
+@Entity({ name: "emprestimo" })
 export class Emprestimo implements EmprestimoModel {
   @PrimaryColumn()
   @PrimaryGeneratedColumn("uuid")

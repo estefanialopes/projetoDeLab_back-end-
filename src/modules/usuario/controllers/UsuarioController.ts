@@ -20,7 +20,8 @@ export class UsuarioController {
       email,
       senha,
       endereco,
-      dataNascimento
+      dataNascimento,
+      permissao: 'student'
     } as AddUsuario)
     const { senha: senhaUsuario, ...rest} = resp
     return response.json({statuscode: 200, body: rest})

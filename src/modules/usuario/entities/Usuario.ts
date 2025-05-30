@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm'
-import type { UsuarioModel } from '@modules/usuario/types'
+import type { tipoPermissao, UsuarioModel } from '@modules/usuario/types'
 
 @Entity({ name: 'usuario' })
 export class Usuario implements UsuarioModel {
@@ -18,6 +18,9 @@ export class Usuario implements UsuarioModel {
   
   @Column({ name: 'email' })
   email!: string
+
+  @Column({ name: 'permissao' })
+  permissao!: tipoPermissao
 
   @Column({ name: 'senha' })
   senha!: string
